@@ -1,0 +1,32 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: NOR3
+* View Name:     schematic
+* Netlisted on:  Jan 14 02:12:43 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    NOR3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NOR3 A B C GND VDD VOUT
+*.PININFO A:I B:I C:I VOUT:O GND:B VDD:B
+MNM2 VOUT C GND GND n18 W=220n L=180n m=1
+MNM0 VOUT A GND GND n18 W=220n L=180n m=1
+MNM1 VOUT B GND GND n18 W=220n L=180n m=1
+MPM2 VOUT C net46 VDD p18 W=1.32u L=180n m=1
+MPM1 net45 A VDD VDD p18 W=1.32u L=180n m=1
+MPM0 net46 B net45 VDD p18 W=1.32u L=180n m=1
+.ENDS
+

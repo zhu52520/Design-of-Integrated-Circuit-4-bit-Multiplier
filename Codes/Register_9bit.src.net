@@ -1,0 +1,63 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: Register_9bit
+* View Name:     schematic
+* Netlisted on:  Jan  3 20:14:57 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    TSPC
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT TSPC CLK D GND INVQ Q RST VDD
+*.PININFO CLK:I D:I RST:I INVQ:O Q:O GND:B VDD:B
+MPM12 net044 net013 VDD VDD p18 W=880n L=180n m=1
+MPM26 INVQ Q VDD VDD p18 W=880n L=180n m=1
+MPM10 net013 D VDD VDD p18 W=440n L=180n m=1
+MPM25 Q net27 VDD VDD p18 W=880n L=180n m=1
+MPM24 net27 CLK VDD VDD p18 W=880n L=180n m=1
+MPM22 net043 RST net044 VDD p18 W=880n L=180n m=1
+MPM23 net045 CLK net043 VDD p18 W=880n L=180n m=1
+MNM19 net045 RST GND GND n18 W=440n L=180n m=1
+MNM20 INVQ Q GND GND n18 W=440n L=180n m=1
+MNM12 net013 D GND GND n18 W=220n L=180n m=1
+MNM4 net49 net27 GND GND n18 W=440n L=180n m=1
+MNM3 Q CLK net49 GND n18 W=440n L=180n m=1
+MNM16 net045 net013 GND GND n18 W=440n L=180n m=1
+MNM18 net27 net045 net48 GND n18 W=440n L=180n m=1
+MNM17 net48 CLK GND GND n18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    Register_9bit
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Register_9bit CLK D0 D1 D2 D3 D4 D5 D6 D7 D8 GND INVQ0 INVQ1 INVQ2 
++ INVQ3 INVQ4 INVQ5 INVQ6 INVQ7 INVQ8 Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 RST VDD
+*.PININFO CLK:I D0:I D1:I D2:I D3:I D4:I D5:I D6:I D7:I D8:I RST:I INVQ0:O 
+*.PININFO INVQ1:O INVQ2:O INVQ3:O INVQ4:O INVQ5:O INVQ6:O INVQ7:O INVQ8:O Q0:O 
+*.PININFO Q1:O Q2:O Q3:O Q4:O Q5:O Q6:O Q7:O Q8:O GND:B VDD:B
+XI8 CLK D8 GND INVQ8 Q8 RST VDD / TSPC
+XI7 CLK D7 GND INVQ7 Q7 RST VDD / TSPC
+XI6 CLK D6 GND INVQ6 Q6 RST VDD / TSPC
+XI5 CLK D5 GND INVQ5 Q5 RST VDD / TSPC
+XI4 CLK D4 GND INVQ4 Q4 RST VDD / TSPC
+XI3 CLK D3 GND INVQ3 Q3 RST VDD / TSPC
+XI2 CLK D2 GND INVQ2 Q2 RST VDD / TSPC
+XI1 CLK D1 GND INVQ1 Q1 RST VDD / TSPC
+XI0 CLK D0 GND INVQ0 Q0 RST VDD / TSPC
+.ENDS
+

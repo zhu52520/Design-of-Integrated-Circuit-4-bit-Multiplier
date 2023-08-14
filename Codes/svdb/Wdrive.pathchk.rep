@@ -1,0 +1,6 @@
+ERC PATHCHK REPORT for Wdrive
+  PATHCHK GROUND && ! POWER:
+      cell Wdrive: 6 10 
+  PATHCHK POWER && ! GROUND:
+  PATHCHK ! POWER && ! GROUND:
+  PATHCHK ! LABELED:

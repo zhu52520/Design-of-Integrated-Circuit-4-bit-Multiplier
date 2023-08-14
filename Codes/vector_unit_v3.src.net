@@ -1,0 +1,299 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: vector_unit_v3
+* View Name:     schematic
+* Netlisted on:  Jan  3 02:32:12 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    AND2_TG
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT AND2_TG A B GND VDD Y
+*.PININFO A:I B:I Y:O GND:B VDD:B
+MPM2 net14 A VDD VDD p18 W=440n L=180n m=1
+MPM1 B net14 Y VDD p18 W=220n L=180n m=1
+MPM0 GND A Y VDD p18 W=220n L=180n m=1
+MNM2 net14 A GND GND n18 W=220n L=180n m=1
+MNM1 B A Y GND n18 W=220n L=180n m=1
+MNM0 GND net14 Y GND n18 W=220n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    MA
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT MA A B C CIN GND S VDD
+*.PININFO A:I B:I CIN:I C:O S:O GND:B VDD:B
+MNM1 C net168 GND GND n18 W=440n L=180n m=1
+MNM0 S net171 GND GND n18 W=440n L=180n m=1
+MNM24 net171 CIN net197 GND n18 W=440n L=180n m=1
+MNM23 net171 net168 net186 GND n18 W=440n L=180n m=1
+MNM22 net168 A net201 GND n18 W=440n L=180n m=1
+MNM21 net168 CIN net163 GND n18 W=440n L=180n m=1
+MNM20 net197 A net198 GND n18 W=440n L=180n m=1
+MNM19 net186 CIN GND GND n18 W=440n L=180n m=1
+MNM18 net186 B GND GND n18 W=440n L=180n m=1
+MNM17 net186 A GND GND n18 W=440n L=180n m=1
+MNM16 net201 B GND GND n18 W=440n L=180n m=1
+MNM15 net163 B GND GND n18 W=440n L=180n m=1
+MNM14 net163 A GND GND n18 W=440n L=180n m=1
+MNM13 net198 B GND GND n18 W=440n L=180n m=1
+MPM25 net199 A VDD VDD p18 W=880n L=180n m=1
+MPM24 net200 B net199 VDD p18 W=880n L=180n m=1
+MPM23 net172 CIN VDD VDD p18 W=880n L=180n m=1
+MPM22 net172 B VDD VDD p18 W=880n L=180n m=1
+MPM21 net172 A VDD VDD p18 W=880n L=180n m=1
+MPM20 net202 B VDD VDD p18 W=880n L=180n m=1
+MPM19 net165 B VDD VDD p18 W=880n L=180n m=1
+MPM18 net165 A VDD VDD p18 W=880n L=180n m=1
+MPM16 net171 CIN net200 VDD p18 W=880n L=180n m=1
+MPM15 net171 net168 net172 VDD p18 W=880n L=180n m=1
+MPM14 net168 A net202 VDD p18 W=880n L=180n m=1
+MPM12 net168 CIN net165 VDD p18 W=880n L=180n m=1
+MPM1 C net168 VDD VDD p18 W=880n L=180n m=1
+MPM0 S net171 VDD VDD p18 W=880n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    MUX
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT MUX GND I0 I1 INVS S VDD VOUT
+*.PININFO I0:I I1:I INVS:I S:I VOUT:O GND:B VDD:B
+MPM1 I1 INVS VOUT VDD p18 W=440n L=180n m=1
+MPM0 I0 S VOUT VDD p18 W=440n L=180n m=1
+MNM1 I1 S VOUT GND n18 W=440n L=180n m=1
+MNM0 I0 INVS VOUT GND n18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    inv
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT inv GND VDD VI VOUT
+*.PININFO VI:I VOUT:O GND:B VDD:B
+MPM0 VOUT VI VDD VDD p18 W=880n L=180n m=1
+MNM0 VOUT VI GND GND n18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    CSA_B
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT CSA_B A B CI COUT GND INVCI INVCOUT S VDD
+*.PININFO A:I B:I CI:I INVCI:I COUT:O INVCOUT:O S:O GND:B VDD:B
+MPM3 net359 A VDD VDD p18 W=880n L=180n m=1
+MPM2 net366 net362 VDD VDD p18 W=440n L=180n m=1
+MPM1 net362 B VDD VDD p18 W=440n L=180n m=1
+MPM0 net362 A VDD VDD p18 W=440n L=180n m=1
+MPM4 net366 B net359 VDD p18 W=880n L=180n m=1
+MPM8 net368 A VDD VDD p18 W=880n L=180n m=1
+MPM7 net368 B VDD VDD p18 W=880n L=180n m=1
+MPM9 net365 net363 net368 VDD p18 W=880n L=180n m=1
+MPM6 net363 B net361 VDD p18 W=880n L=180n m=1
+MPM5 net361 A VDD VDD p18 W=880n L=180n m=1
+XI0 GND net358 net357 INVCI CI VDD S / MUX
+XI2 GND net353 net354 INVCI CI VDD COUT / MUX
+XI1 GND net362 net363 INVCI CI VDD INVCOUT / MUX
+MNM0 net362 A net360 GND n18 W=440n L=180n m=1
+MNM4 net366 net362 net364 GND n18 W=440n L=180n m=1
+MNM1 net360 B GND GND n18 W=440n L=180n m=1
+MNM6 net364 A GND GND n18 W=440n L=180n m=1
+MNM5 net364 B GND GND n18 W=440n L=180n m=1
+MNM8 net365 A net367 GND n18 W=440n L=180n m=1
+MNM3 net363 A GND GND n18 W=220n L=180n m=1
+MNM2 net363 B GND GND n18 W=220n L=180n m=1
+MNM7 net365 net363 GND GND n18 W=220n L=180n m=1
+MNM9 net367 B GND GND n18 W=440n L=180n m=1
+XI6 GND VDD net366 net358 / inv
+XI5 GND VDD net365 net357 / inv
+XI3 GND VDD net362 net353 / inv
+XI4 GND VDD net363 net354 / inv
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    XOR2_TG_41
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT XOR2_TG_41 A B GND INVA INVB VDD Y
+*.PININFO A:I B:I INVA:I INVB:I Y:O GND:B VDD:B
+MNM3 INVA B Y GND n18 W=440n L=180n m=1
+MNM2 A INVB Y GND n18 W=440n L=180n m=1
+MPM2 INVA INVB Y VDD p18 W=440n L=180n m=1
+MPM3 A B Y VDD p18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    HA_2_3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT HA_2_3 A B C GND INVC S VDD
+*.PININFO A:I B:I C:O INVC:O S:O GND:B VDD:B
+MNM6 S net113 GND GND n18 W=220n L=180n m=1
+MNM0 INVC B net123 GND n18 W=440n L=180n m=1
+MNM2 net113 INVC net111 GND n18 W=440n L=180n m=1
+MNM4 net111 B GND GND n18 W=440n L=180n m=1
+MNM3 net111 A GND GND n18 W=440n L=180n m=1
+MNM1 net123 A GND GND n18 W=440n L=180n m=1
+MNM5 C INVC GND GND n18 W=220n L=180n m=1
+MPM6 S net113 VDD VDD p18 W=440n L=180n m=1
+MPM3 net122 B VDD VDD p18 W=880n L=180n m=1
+MPM1 INVC B VDD VDD p18 W=440n L=180n m=1
+MPM0 INVC A VDD VDD p18 W=440n L=180n m=1
+MPM2 net113 INVC VDD VDD p18 W=440n L=180n m=1
+MPM4 net113 A net122 VDD p18 W=880n L=180n m=1
+MPM5 C INVC VDD VDD p18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    HA_SC
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT HA_SC A B COUT GND S VDD
+*.PININFO A:I B:I COUT:O S:O GND:B VDD:B
+MPM6 COUT net20 VDD VDD p18 W=440n L=180n m=1
+MPM5 S net32 VDD VDD p18 W=440n L=180n m=1
+MPM4 net32 A net51 VDD p18 W=880n L=180n m=1
+MPM3 net51 B VDD VDD p18 W=880n L=180n m=1
+MPM2 net32 net20 VDD VDD p18 W=440n L=180n m=1
+MPM1 net20 B VDD VDD p18 W=440n L=180n m=1
+MPM0 net20 A VDD VDD p18 W=440n L=180n m=1
+MNM6 COUT net20 GND GND n18 W=220n L=180n m=1
+MNM5 S net32 GND GND n18 W=220n L=180n m=1
+MNM4 net30 B GND GND n18 W=440n L=180n m=1
+MNM3 net30 A GND GND n18 W=440n L=180n m=1
+MNM2 net32 net20 net30 GND n18 W=440n L=180n m=1
+MNM1 net044 A GND GND n18 W=440n L=180n m=1
+MNM0 net20 B net044 GND n18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    Multiplier
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Multiplier GND O0 O1 O2 O3 O4 O5 O6 O7 VDD X0 X1 X2 X3 Y0 Y1 Y2 Y3
+*.PININFO X0:I X1:I X2:I X3:I Y0:I Y1:I Y2:I Y3:I O0:O O1:O O2:O O3:O O4:O 
+*.PININFO O5:O O6:O O7:O GND:B VDD:B
+XI42 X2 Y2 GND VDD net209 / AND2_TG
+XI47 X1 Y0 GND VDD net227 / AND2_TG
+XI45 X1 Y2 GND VDD net218 / AND2_TG
+XI48 X0 Y0 GND VDD O0 / AND2_TG
+XI51 X0 Y3 GND VDD net213 / AND2_TG
+XI38 X3 Y1 GND VDD net211 / AND2_TG
+XI44 X1 Y3 GND VDD net206 / AND2_TG
+XI49 X0 Y1 GND VDD net233 / AND2_TG
+XI37 X3 Y2 GND VDD net198 / AND2_TG
+XI50 X0 Y2 GND VDD net230 / AND2_TG
+XI43 X2 Y3 GND VDD net197 / AND2_TG
+XI40 X2 Y0 GND VDD net224 / AND2_TG
+XI39 X3 Y0 GND VDD net217 / AND2_TG
+XI41 X2 Y1 GND VDD net225 / AND2_TG
+XI46 X1 Y1 GND VDD net228 / AND2_TG
+XI36 X3 Y3 GND VDD net182 / AND2_TG
+XI26 net220 net219 net207 net221 GND net222 VDD / MA
+XI25 net210 net208 net194 net205 GND net204 VDD / MA
+XI20 net211 net209 net196 net206 GND net205 VDD / MA
+XI21 net224 net228 net221 net230 GND net0113 VDD / MA
+XI30 net194 net193 net192 net184 GND net191 net185 O5 VDD / CSA_B
+XI29 net207 net204 net202 net192 GND net203 net191 O4 VDD / CSA_B
+XI53 net187 net186 net184 net179 GND net185 net059 O6 VDD / CSA_B
+XI54 net180 net179 GND net056 net059 VDD O7 / XOR2_TG_41
+XI35 net223 net222 net202 GND net203 O3 VDD / HA_2_3
+XI52 net188 net182 net180 GND net056 net186 VDD / HA_2_3
+XI24 net0111 net0113 net223 GND O2 VDD / HA_SC
+XI23 net196 net195 net187 GND net193 VDD / HA_SC
+XI18 net218 net213 net208 GND net219 VDD / HA_SC
+XI17 net198 net197 net188 GND net195 VDD / HA_SC
+XI16 net227 net233 net0111 GND O1 VDD / HA_SC
+XI19 net217 net225 net210 GND net220 VDD / HA_SC
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    CSA_C
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT CSA_C A B CI COUT GND INVCI S VDD
+*.PININFO A:I B:I CI:I INVCI:I COUT:O S:O GND:B VDD:B
+MPM3 net375 A VDD VDD p18 W=880n L=180n m=1
+MPM2 net381 net384 VDD VDD p18 W=440n L=180n m=1
+MPM1 net384 B VDD VDD p18 W=440n L=180n m=1
+MPM0 net384 A VDD VDD p18 W=440n L=180n m=1
+MPM4 net381 B net375 VDD p18 W=880n L=180n m=1
+MPM8 net382 A VDD VDD p18 W=880n L=180n m=1
+MPM7 net382 B VDD VDD p18 W=880n L=180n m=1
+MPM9 net379 net378 net382 VDD p18 W=880n L=180n m=1
+MPM6 net378 B net377 VDD p18 W=880n L=180n m=1
+MPM5 net377 A VDD VDD p18 W=880n L=180n m=1
+XI0 GND net374 net373 INVCI CI VDD S / MUX
+XI2 GND net371 net372 INVCI CI VDD COUT / MUX
+MNM0 net384 A net376 GND n18 W=440n L=180n m=1
+MNM4 net381 net384 net380 GND n18 W=440n L=180n m=1
+MNM1 net376 B GND GND n18 W=440n L=180n m=1
+MNM6 net380 A GND GND n18 W=440n L=180n m=1
+MNM5 net380 B GND GND n18 W=440n L=180n m=1
+MNM8 net379 B net383 GND n18 W=440n L=180n m=1
+MNM3 net378 A GND GND n18 W=220n L=180n m=1
+MNM2 net378 B GND GND n18 W=220n L=180n m=1
+MNM7 net379 net378 GND GND n18 W=220n L=180n m=1
+MNM9 net383 A GND GND n18 W=440n L=180n m=1
+XI6 GND VDD net381 net374 / inv
+XI5 GND VDD net379 net373 / inv
+XI3 GND VDD net384 net371 / inv
+XI4 GND VDD net378 net372 / inv
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    vector_unit_v3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT vector_unit_v3 A0 A1 A2 A3 B0 B1 B2 B3 GND O0 O1 O2 O3 O4 O5 O6 O7 O8 
++ VDD X0 X1 X2 X3 Y0 Y1 Y2 Y3
+*.PININFO A0:I A1:I A2:I A3:I B0:I B1:I B2:I B3:I X0:I X1:I X2:I X3:I Y0:I 
+*.PININFO Y1:I Y2:I Y3:I O0:O O1:O O2:O O3:O O4:O O5:O O6:O O7:O O8:O GND:B 
+*.PININFO VDD:B
+XI96 GND net57 net62 net61 net60 net63 net64 net65 net59 VDD B0 B1 B2 B3 A0 A1 
++ A2 A3 / Multiplier
+XI95 GND net52 net35 net36 net37 net38 net39 net40 net41 VDD X0 X1 X2 X3 Y0 Y1 
++ Y2 Y3 / Multiplier
+XI97 net57 net52 net47 GND net42 O0 VDD / HA_2_3
+XI103 net65 net40 net56 net55 GND net49 net48 O6 VDD / CSA_B
+XI102 net64 net39 net53 net56 GND net45 net49 O5 VDD / CSA_B
+XI101 net63 net38 net54 net53 GND net46 net45 O4 VDD / CSA_B
+XI100 net60 net37 net50 net54 GND net43 net46 O3 VDD / CSA_B
+XI99 net61 net36 net51 net50 GND net44 net43 O2 VDD / CSA_B
+XI98 net62 net35 net47 net51 GND net42 net44 O1 VDD / CSA_B
+XI105 net59 net41 net55 O8 GND net48 O7 VDD / CSA_C
+.ENDS
+

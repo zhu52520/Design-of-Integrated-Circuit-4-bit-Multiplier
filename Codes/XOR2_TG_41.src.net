@@ -1,0 +1,30 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: XOR2_TG_41
+* View Name:     schematic
+* Netlisted on:  Dec 31 03:02:00 2022
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    XOR2_TG_41
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT XOR2_TG_41 A B GND INVA INVB VDD Y
+*.PININFO A:I B:I INVA:I INVB:I Y:O GND:B VDD:B
+MNM3 INVA B Y GND n18 W=440n L=180n m=1
+MNM2 A INVB Y GND n18 W=440n L=180n m=1
+MPM2 INVA INVB Y VDD p18 W=440n L=180n m=1
+MPM3 A B Y VDD p18 W=440n L=180n m=1
+.ENDS
+

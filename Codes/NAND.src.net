@@ -1,0 +1,30 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: NAND
+* View Name:     schematic
+* Netlisted on:  Jan 14 20:06:30 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    NAND
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NAND A B GND VDD VOUT
+*.PININFO A:I B:I VOUT:O GND:B VDD:B
+MNM0 VOUT A net41 GND n18 W=440n L=180n m=1
+MNM1 net41 B GND GND n18 W=440n L=180n m=1
+MPM1 VOUT B VDD VDD p18 W=440n L=180n m=1
+MPM0 VOUT A VDD VDD p18 W=440n L=180n m=1
+.ENDS
+

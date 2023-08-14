@@ -1,0 +1,115 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: SRAM_Col_8bit
+* View Name:     schematic
+* Netlisted on:  Jan 13 23:52:43 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    Precharger
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Precharger BIT INVBIT PCEN VDD
+*.PININFO PCEN:I BIT:B INVBIT:B VDD:B
+MPM0 VDD PCEN BIT VDD p18 W=440n L=180n m=1
+MPM1 INVBIT PCEN VDD VDD p18 W=440n L=180n m=1
+MPM2 BIT PCEN INVBIT VDD p18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    Bitcell
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Bitcell BIT GND INVBIT VDD WL
+*.PININFO WL:I BIT:B GND:B INVBIT:B VDD:B
+MNM1 net16 net15 GND GND n18 W=800n L=180n m=1
+MNM0 GND net16 net15 GND n18 W=800n L=180n m=1
+MNM3 INVBIT WL net16 GND n18 W=440n L=180n m=1
+MNM2 net15 WL BIT GND n18 W=440n L=180n m=1
+MPM1 net16 net15 VDD VDD p18 W=220n L=180n m=1
+MPM0 VDD net16 net15 VDD p18 W=220n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    Wdrive
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Wdrive BIT DATA GND INVBIT VDD WEN
+*.PININFO DATA:I WEN:I BIT:B GND:B INVBIT:B VDD:B
+MNM1 net79 WEN BIT GND n18 W=1.76u L=180n m=1
+MNM3 INVBIT WEN net78 GND n18 W=1.76u L=180n m=1
+MNM5 net72 DATA GND GND n18 W=220n L=180n m=1
+MNM0 net76 net72 GND GND n18 W=220n L=180n m=1
+MNM2 GND net72 net79 GND n18 W=1.76u L=180n m=1
+MNM4 net78 net76 GND GND n18 W=1.76u L=180n m=1
+MPM0 net72 DATA VDD VDD p18 W=440n L=180n m=1
+MPM1 net76 net72 VDD VDD p18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    std_inverter
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT std_inverter GND VDD X Y
+*.PININFO X:I Y:O GND:B VDD:B
+MNM0 Y X GND GND n18 W=220n L=180n m=1
+MPM0 Y X VDD VDD p18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    SA_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT SA_v2 BIT GND INVBIT OUT SAEN VDD
+*.PININFO BIT:I INVBIT:I SAEN:I OUT:O GND:B VDD:B
+MNM2 net32 BIT net29 GND n18 W=440n L=180n m=1
+MNM5 net09 INVBIT net32 GND n18 W=440n L=180n m=1
+MNM6 net32 SAEN GND GND n18 W=880n L=180n m=1
+MPM1 VDD net29 net09 VDD p18 W=3.3u L=180n m=1
+MPM2 net29 net29 VDD VDD p18 W=3.3u L=180n m=1
+XI1 GND VDD net019 OUT / std_inverter
+XI0 GND VDD net09 net019 / std_inverter
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    SRAM_Col_8bit
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT SRAM_Col_8bit ADD0 ADD1 ADD2 ADD3 ADD4 ADD5 ADD6 ADD7 BIT DATA GND 
++ INVBIT OUT PCEN SAEN VDD WEN
+*.PININFO ADD0:I ADD1:I ADD2:I ADD3:I ADD4:I ADD5:I ADD6:I ADD7:I DATA:I 
+*.PININFO PCEN:I SAEN:I WEN:I BIT:O INVBIT:O OUT:O GND:B VDD:B
+XI0 BIT INVBIT PCEN VDD / Precharger
+XI8 BIT GND INVBIT VDD ADD7 / Bitcell
+XI7 BIT GND INVBIT VDD ADD6 / Bitcell
+XI6 BIT GND INVBIT VDD ADD5 / Bitcell
+XI5 BIT GND INVBIT VDD ADD4 / Bitcell
+XI4 BIT GND INVBIT VDD ADD3 / Bitcell
+XI3 BIT GND INVBIT VDD ADD2 / Bitcell
+XI2 BIT GND INVBIT VDD ADD1 / Bitcell
+XI1 BIT GND INVBIT VDD ADD0 / Bitcell
+XI9 BIT DATA GND INVBIT VDD WEN / Wdrive
+XI12 BIT GND INVBIT OUT SAEN VDD / SA_v2
+.ENDS
+

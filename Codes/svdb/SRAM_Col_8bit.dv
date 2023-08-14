@@ -1,0 +1,6 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/SRAM_Col_8bit.dv
+dv_start matched                                  
+dv_cell {SRAM_Col_8bit} {SRAM_Col_8bit} matched
+dv_obj_count -transformed_nets {22 22} -transformed_inst {14 14} -transformed_port {17 17}
+dv_end

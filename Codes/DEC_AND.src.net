@@ -1,0 +1,51 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: DEC_AND
+* View Name:     schematic
+* Netlisted on:  Jan 15 15:54:50 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    AND2_SC
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT AND2_SC A B GND VDD VOUT
+*.PININFO A:I B:I VOUT:O GND:B VDD:B
+MPM2 VOUT net15 VDD VDD p18 W=440n L=180n m=1
+MPM1 net15 B VDD VDD p18 W=440n L=180n m=1
+MPM0 net15 A VDD VDD p18 W=440n L=180n m=1
+MNM2 VOUT net15 GND GND n18 W=220n L=180n m=1
+MNM1 net25 B GND GND n18 W=440n L=180n m=1
+MNM0 net15 A net25 GND n18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    DEC_AND
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT DEC_AND A0 A1 A2 A3 A4 A5 A6 A7 CLK GND O0 O1 O2 O3 O4 O5 O6 O7 VDD
+*.PININFO A0:I A1:I A2:I A3:I A4:I A5:I A6:I A7:I CLK:I O0:O O1:O O2:O O3:O 
+*.PININFO O4:O O5:O O6:O O7:O GND:B VDD:B
+XI8 A4 CLK GND VDD O4 / AND2_SC
+XI7 A6 CLK GND VDD O6 / AND2_SC
+XI6 A7 CLK GND VDD O7 / AND2_SC
+XI5 A5 CLK GND VDD O5 / AND2_SC
+XI4 A2 CLK GND VDD O2 / AND2_SC
+XI3 A3 CLK GND VDD O3 / AND2_SC
+XI1 A1 CLK GND VDD O1 / AND2_SC
+XI0 A0 CLK GND VDD O0 / AND2_SC
+.ENDS
+

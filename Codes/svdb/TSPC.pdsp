@@ -1,0 +1,50 @@
+* Calibre pushdown separate-properties (back-annotation) data
+***************************************
+*
+* These lvs-actionable properties, indexed by DEVICE element(model) will be kept in the netlist:
+*
+* KEEP_PROP_BEGIN
+* KEEP_PROP D(NDIO18) A
+* KEEP_PROP D(NDIO33) A
+* KEEP_PROP D(NWDIO) A
+* KEEP_PROP D(PDIO18) A
+* KEEP_PROP D(PDIO33) A
+* KEEP_PROP M(C1) L W
+* KEEP_PROP M(C2) L W
+* KEEP_PROP MN(N33) L W
+* KEEP_PROP MN(NM) L W
+* KEEP_PROP MP(P33) L W
+* KEEP_PROP MP(PM) L W
+* KEEP_PROP Q(PNP) A
+* KEEP_PROP R(RNDIF) R
+* KEEP_PROP R(RNDIFSAB) R
+* KEEP_PROP R(RNPO) R
+* KEEP_PROP R(RNPOSAB) R
+* KEEP_PROP R(RNWAA) R
+* KEEP_PROP R(RNWSTI) R
+* KEEP_PROP R(RPDIF) R
+* KEEP_PROP R(RPDIFSAB) R
+* KEEP_PROP R(RPPO) R
+* KEEP_PROP R(RPPOSAB) R
+* KEEP_PROP_END
+*
+.SUBCKT n18_CDNS_672748244950
+M0 $X=0 $Y=0 $D=0
+.ENDS
+***************************************
+.SUBCKT TSPC
+M0 $X=26400 $Y=-11580 $D=0
+M1 $X=27550 $Y=-11580 $D=0
+M2 $X=29920 $Y=-11580 $D=0
+M3 $X=30640 $Y=-11580 $D=0
+M4 $X=31360 $Y=-11580 $D=0
+M5 $X=33340 $Y=-11460 $D=0
+M6 $X=26400 $Y=-9500 $D=4
+M7 $X=27120 $Y=-9500 $D=4
+M8 $X=29820 $Y=-9500 $D=4
+M9 $X=30540 $Y=-9500 $D=4
+M10 $X=30970 $Y=-9500 $D=4
+M11 $X=31400 $Y=-9500 $D=4
+M12 $X=33340 $Y=-9060 $D=4
+.ENDS
+***************************************

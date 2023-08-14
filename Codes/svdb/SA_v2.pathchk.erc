@@ -1,0 +1,9 @@
+SA_v2 1000
+ERC PATHCHK GROUND && ! POWER
+0 0 0 Jan 13 20:57:59 2023                                                      
+ERC PATHCHK POWER && ! GROUND
+0 0 0 Jan 13 20:57:59 2023                                                      
+ERC PATHCHK ! POWER && ! GROUND
+0 0 0 Jan 13 20:57:59 2023                                                      
+ERC PATHCHK ! LABELED
+0 0 0 Jan 13 20:57:59 2023                                                      

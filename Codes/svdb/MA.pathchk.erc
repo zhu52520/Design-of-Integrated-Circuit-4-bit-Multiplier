@@ -1,0 +1,9 @@
+MA 1000
+ERC PATHCHK GROUND && ! POWER
+0 0 0 Dec 29 22:58:54 2022                                                      
+ERC PATHCHK POWER && ! GROUND
+0 0 0 Dec 29 22:58:54 2022                                                      
+ERC PATHCHK ! POWER && ! GROUND
+0 0 0 Dec 29 22:58:54 2022                                                      
+ERC PATHCHK ! LABELED
+0 0 0 Dec 29 22:58:54 2022                                                      

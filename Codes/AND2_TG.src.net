@@ -1,0 +1,32 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: AND2_TG
+* View Name:     schematic
+* Netlisted on:  Dec 29 19:18:52 2022
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    AND2_TG
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT AND2_TG A B GND VDD Y
+*.PININFO A:I B:I Y:O GND:B VDD:B
+MPM2 net14 A VDD VDD p18 W=440n L=180n m=1
+MPM1 B net14 Y VDD p18 W=220n L=180n m=1
+MPM0 GND A Y VDD p18 W=220n L=180n m=1
+MNM2 net14 A GND GND n18 W=220n L=180n m=1
+MNM1 B A Y GND n18 W=220n L=180n m=1
+MNM0 GND net14 Y GND n18 W=220n L=180n m=1
+.ENDS
+

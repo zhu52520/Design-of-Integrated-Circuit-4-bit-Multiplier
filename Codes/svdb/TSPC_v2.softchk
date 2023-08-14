@@ -1,0 +1,14 @@
+TSPC_v2 1000
+SOFTCHK nwell CONTACT.
+1 1 2 Jan 13 02:39:02 2023                                                      
+Net VDD is selected for stamping.
+Rejected nets: 9
+p 1 4
+CN TSPC_v2 c 1 0 0 1 0 0
+DN 9
+46070 -9110
+47210 -9110
+47210 -8690
+46070 -8690
+SOFTCHK pwell CONTACT.
+0 0 0 Jan 13 02:39:02 2023                                                      

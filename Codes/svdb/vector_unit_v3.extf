@@ -1,0 +1,14 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1672684332 1672684333
+lvs_ExtOutFile RUNDIR /home/work/Desktop/EE113P/Project
+lvs_ExtOutFile RULES_FILE /home/work/Desktop/EE113P/Project/_SmicSP6.1P_cal018_log_p1mtx_sali.lvs_pex_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoErcSummary {4 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST /home/work/Desktop/EE113P/Project/svdb/vector_unit_v3.sp
+lvs_ExtOutFile EXTRACTION_REPORT vector_unit_v3.lvs.report.ext
+lvs_ExtOutFile LAYOUT_PDSP { pdba.data svdb/vector_unit_v3.pdsp }
+lvs_ExtOutFile ERC_PATHCHK_DATABASE svdb/vector_unit_v3.pathchk.erc
+lvs_ExtOutFile ERC_PATHCHK_REPORT svdb/vector_unit_v3.pathchk.rep
+lvs_ExtOutFile ERC_DATABASE erc.db

@@ -1,0 +1,66 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: 38Decoder
+* View Name:     schematic
+* Netlisted on:  Jan 15 03:28:37 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    std_inverter
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT std_inverter GND VDD X Y
+*.PININFO X:I Y:O GND:B VDD:B
+MNM0 Y X GND GND n18 W=220n L=180n m=1
+MPM0 Y X VDD VDD p18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    NOR3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NOR3 A B C GND VDD VOUT
+*.PININFO A:I B:I C:I VOUT:O GND:B VDD:B
+MNM2 VOUT C GND GND n18 W=220n L=180n m=1
+MNM0 VOUT A GND GND n18 W=220n L=180n m=1
+MNM1 VOUT B GND GND n18 W=220n L=180n m=1
+MPM2 VOUT C net46 VDD p18 W=1.32u L=180n m=1
+MPM1 net45 A VDD VDD p18 W=1.32u L=180n m=1
+MPM0 net46 B net45 VDD p18 W=1.32u L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    38Decoder
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT 38Decoder ADD0 ADD1 ADD2 GND O0 O1 O2 O3 O4 O5 O6 O7 VDD
+*.PININFO ADD0:I ADD1:I ADD2:I O0:O O1:O O2:O O3:O O4:O O5:O O6:O O7:O GND:B 
+*.PININFO VDD:B
+XI2 GND VDD ADD2 INVADD2 / std_inverter
+XI1 GND VDD ADD1 INVADD1 / std_inverter
+XI0 GND VDD ADD0 INVADD0 / std_inverter
+XI10 INVADD0 INVADD1 INVADD2 GND VDD O7 / NOR3
+XI9 ADD0 INVADD1 INVADD2 GND VDD O6 / NOR3
+XI8 INVADD0 ADD1 INVADD2 GND VDD O5 / NOR3
+XI7 ADD0 ADD1 INVADD2 GND VDD O4 / NOR3
+XI6 INVADD0 INVADD1 ADD2 GND VDD O3 / NOR3
+XI5 ADD0 INVADD1 ADD2 GND VDD O2 / NOR3
+XI4 INVADD0 ADD1 ADD2 GND VDD O1 / NOR3
+XI3 ADD0 ADD1 ADD2 GND VDD O0 / NOR3
+.ENDS
+

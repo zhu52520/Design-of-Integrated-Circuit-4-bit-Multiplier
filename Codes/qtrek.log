@@ -1,0 +1,6 @@
+*INFO* (LO-1027): 5100 license successfully checked out for Virtuoso_Layout_Migrate.
+Mapping file ./migratemap.il not loaded.
+Copy hierarchy PROJLib/TSPC/_loOptArea_0 to PROJLib/TSPC/_loOptArea_0
+*ERROR* (LO-3186): Missing VLMDefaultSetup constraint group.
+*ERROR* (LO-3191): Failed to load technology library smic18mmrf.
+loGUI_MessageBox::critical: VLM is unable to read the technology file.  Check the qtrek.log file for more details.  In the Execute Flow form's Setup form, choose either "DFII Techfile", ensuring that it contains a VLMDefaultSetup constraint group, or choose a .qtt file located in the Setup Directory.

@@ -1,0 +1,41 @@
+CADENCE IHNL11140
+$model
+PROJLib/DEC_AND/schematic DEC_AND
+PROJLib/Multiplier/schematic Multiplier
+PROJLib/MUX/schematic MUX
+PROJLib/vector_unit_v3/schematic vector_unit_v3
+PROJLib/HA_2_3/schematic HA_2_3
+PROJLib/CSA_C/schematic CSA_C
+PROJLib/std_inverter/schematic std_inverter
+PROJLib/Register_4bit/schematic Register_4bit
+PROJLib/TSPC_v2/schematic TSPC_v2
+PROJLib/MUX2_SC/schematic MUX2_SC
+PROJLib/Buffer/schematic Buffer
+PROJLib/Buffer3/schematic Buffer3
+PROJLib/SRAM_DRV/schematic SRAM_DRV
+PROJLib/SRAM_Col_8bit/schematic SRAM_Col_8bit
+PROJLib/AND2_SC/schematic AND2_SC
+PROJLib/SA_v2/schematic SA_v2
+PROJLib/CSA_B/schematic CSA_B
+PROJLib/SRAM_8_16/schematic SRAM_8_16
+PROJLib/Register_9bit_B3/schematic Register_9bit_B3
+PROJLib/HA_SC/schematic HA_SC
+PROJLib/XOR2_TG_41/schematic XOR2_TG_41
+PROJLib/Buffer2/schematic Buffer2
+PROJLib/38Decoder/schematic 38Decoder
+PROJLib/Selector/schematic Selector
+PROJLib/Wdrive/schematic Wdrive
+PROJLib/MA/schematic MA
+PROJLib/NOR3/schematic NOR3
+PROJLib/Precharger/schematic Precharger
+PROJLib/NAND/schematic NAND
+PROJLib/inv/schematic inv
+PROJLib/AND2_TG/schematic AND2_TG
+PROJLib/BONUS3/schematic BONUS3
+PROJLib/Bitcell/schematic Bitcell
+PROJLib/Selector_16bit/schematic Selector_16bit
+$endmodel
+$net
+$endnet
+$param
+$endparam

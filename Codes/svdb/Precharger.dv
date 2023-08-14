@@ -1,0 +1,6 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/Precharger.dv
+dv_start matched                                  
+dv_cell {Precharger} {Precharger} matched
+dv_obj_count -transformed_nets {4 4} -transformed_inst {3 3} -transformed_port {4 4}
+dv_end

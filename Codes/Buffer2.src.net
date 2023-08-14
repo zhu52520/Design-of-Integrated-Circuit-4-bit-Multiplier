@@ -1,0 +1,30 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: Buffer2
+* View Name:     schematic
+* Netlisted on:  Jan 14 19:37:29 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    Buffer2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Buffer2 GND VDD X Y
+*.PININFO X:I Y:O GND:B VDD:B
+MNM1 Y net28 GND GND n18 W=220n L=180n m=1
+MNM0 net28 X GND GND n18 W=220n L=180n m=1
+MPM1 Y net28 VDD VDD p18 W=440n L=180n m=1
+MPM0 net28 X VDD VDD p18 W=440n L=180n m=1
+.ENDS
+

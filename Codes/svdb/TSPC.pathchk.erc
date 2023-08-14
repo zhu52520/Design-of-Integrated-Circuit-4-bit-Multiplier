@@ -1,0 +1,9 @@
+TSPC 1000
+ERC PATHCHK GROUND && ! POWER
+0 0 0 Jan  3 20:17:25 2023                                                      
+ERC PATHCHK POWER && ! GROUND
+0 0 0 Jan  3 20:17:25 2023                                                      
+ERC PATHCHK ! POWER && ! GROUND
+0 0 0 Jan  3 20:17:25 2023                                                      
+ERC PATHCHK ! LABELED
+0 0 0 Jan  3 20:17:25 2023                                                      

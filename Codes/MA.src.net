@@ -1,0 +1,54 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: MA
+* View Name:     schematic
+* Netlisted on:  Dec 29 22:58:53 2022
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    MA
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT MA A B C CIN GND S VDD
+*.PININFO A:I B:I CIN:I C:O S:O GND:B VDD:B
+MNM1 C net168 GND GND n18 W=440n L=180n m=1
+MNM0 S net171 GND GND n18 W=440n L=180n m=1
+MNM24 net171 CIN net197 GND n18 W=440n L=180n m=1
+MNM23 net171 net168 net186 GND n18 W=440n L=180n m=1
+MNM22 net168 A net201 GND n18 W=440n L=180n m=1
+MNM21 net168 CIN net163 GND n18 W=440n L=180n m=1
+MNM20 net197 A net198 GND n18 W=440n L=180n m=1
+MNM19 net186 CIN GND GND n18 W=440n L=180n m=1
+MNM18 net186 B GND GND n18 W=440n L=180n m=1
+MNM17 net186 A GND GND n18 W=440n L=180n m=1
+MNM16 net201 B GND GND n18 W=440n L=180n m=1
+MNM15 net163 B GND GND n18 W=440n L=180n m=1
+MNM14 net163 A GND GND n18 W=440n L=180n m=1
+MNM13 net198 B GND GND n18 W=440n L=180n m=1
+MPM25 net199 A VDD VDD p18 W=880n L=180n m=1
+MPM24 net200 B net199 VDD p18 W=880n L=180n m=1
+MPM23 net172 CIN VDD VDD p18 W=880n L=180n m=1
+MPM22 net172 B VDD VDD p18 W=880n L=180n m=1
+MPM21 net172 A VDD VDD p18 W=880n L=180n m=1
+MPM20 net202 B VDD VDD p18 W=880n L=180n m=1
+MPM19 net165 B VDD VDD p18 W=880n L=180n m=1
+MPM18 net165 A VDD VDD p18 W=880n L=180n m=1
+MPM16 net171 CIN net200 VDD p18 W=880n L=180n m=1
+MPM15 net171 net168 net172 VDD p18 W=880n L=180n m=1
+MPM14 net168 A net202 VDD p18 W=880n L=180n m=1
+MPM12 net168 CIN net165 VDD p18 W=880n L=180n m=1
+MPM1 C net168 VDD VDD p18 W=880n L=180n m=1
+MPM0 S net171 VDD VDD p18 W=880n L=180n m=1
+.ENDS
+

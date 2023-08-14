@@ -1,0 +1,9 @@
+# File Created by work at Tue Jan 10 02:03:54 2023
+# assisted by CdsLibEditor
+SOFTINCLUDE /opt/IC617/share/cdssetup/cds.lib
+DEFINE PROJLib /home/work/Desktop/EE113P/Project/PROJLib
+DEFINE EE113Lab /home/work/Desktop/EE113P/Lab2/EE113Lab
+#Removed by ddDeleteObj: DEFINE SRAM /home/work/Desktop/EE113P/SRAM/SRAM
+#Removed by ddDeleteObj: DEFINE REGDLT /home/work/Desktop/EE113P/Reg_v3
+DEFINE EE113P_ZRH /home/work/Desktop/EE113P/EE113P_ZRH
+DEFINE SRAM /home/work/Desktop/EE113P/SRAM

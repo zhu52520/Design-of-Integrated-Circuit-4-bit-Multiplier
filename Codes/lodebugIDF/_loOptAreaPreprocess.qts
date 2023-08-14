@@ -1,0 +1,17 @@
+// The OptArea Function Definitions
+function _OPTAREA_ = SUBSTRATE
+function _optAreaTemp = _OPTAREA_ & ~ Y0_DRAWING
+create_elements nohier TSPC Y0_DRAWING _optAreaTemp
+
+// The OptArea Freeze Commands
+freeze * area Y0_DRAWING
+freeze n18
+freeze p18
+freeze n18
+freeze n18
+freeze p18
+freeze p18
+freeze n18
+freeze p18
+freeze p18
+

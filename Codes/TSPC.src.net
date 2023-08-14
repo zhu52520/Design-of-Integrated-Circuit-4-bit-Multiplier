@@ -1,0 +1,41 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: TSPC
+* View Name:     schematic
+* Netlisted on:  Jan  3 20:17:25 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    TSPC
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT TSPC CLK D GND INVQ Q RST VDD
+*.PININFO CLK:I D:I RST:I INVQ:O Q:O GND:B VDD:B
+MPM12 net044 net013 VDD VDD p18 W=880n L=180n m=1
+MPM26 INVQ Q VDD VDD p18 W=880n L=180n m=1
+MPM10 net013 D VDD VDD p18 W=440n L=180n m=1
+MPM25 Q net27 VDD VDD p18 W=880n L=180n m=1
+MPM24 net27 CLK VDD VDD p18 W=880n L=180n m=1
+MPM22 net043 RST net044 VDD p18 W=880n L=180n m=1
+MPM23 net045 CLK net043 VDD p18 W=880n L=180n m=1
+MNM19 net045 RST GND GND n18 W=440n L=180n m=1
+MNM20 INVQ Q GND GND n18 W=440n L=180n m=1
+MNM12 net013 D GND GND n18 W=220n L=180n m=1
+MNM4 net49 net27 GND GND n18 W=440n L=180n m=1
+MNM3 Q CLK net49 GND n18 W=440n L=180n m=1
+MNM16 net045 net013 GND GND n18 W=440n L=180n m=1
+MNM18 net27 net045 net48 GND n18 W=440n L=180n m=1
+MNM17 net48 CLK GND GND n18 W=440n L=180n m=1
+.ENDS
+

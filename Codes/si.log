@@ -1,0 +1,15 @@
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.00s.
+
+Loading smic18mmrf/libInit.il ...
+	Loading smic18mmrf/loadCxt.ile ... done!
+	Loading context 'smic18mmrf' from library 'smic18mmrf' ... done!
+	Loading context 'pdkUtils' from library 'smic18mmrf' ... done!
+	Loading smic18mmrf/libInitCustomExit.il ... Loading libInitCustomExit.il for smic18mmrf
+done!
+Loaded smic18mmrf/libInit.il successfully!
+
+Running Artist Hierarchical Netlisting ...
+
+Loading cdf.cxt 
+End netlisting Jan 17 01:29:55 2023
+

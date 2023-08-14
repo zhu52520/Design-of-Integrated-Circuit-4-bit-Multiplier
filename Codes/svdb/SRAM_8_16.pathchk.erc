@@ -1,0 +1,9 @@
+SRAM_8_16 1000
+ERC PATHCHK GROUND && ! POWER
+0 0 0 Jan 15 23:18:37 2023                                                      
+ERC PATHCHK POWER && ! GROUND
+0 0 0 Jan 15 23:18:37 2023                                                      
+ERC PATHCHK ! POWER && ! GROUND
+0 0 0 Jan 15 23:18:37 2023                                                      
+ERC PATHCHK ! LABELED
+0 0 0 Jan 15 23:18:37 2023                                                      

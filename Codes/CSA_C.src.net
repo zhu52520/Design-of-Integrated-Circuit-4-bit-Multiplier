@@ -1,0 +1,78 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: CSA_C
+* View Name:     schematic
+* Netlisted on:  Jan  2 23:38:31 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    MUX
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT MUX GND I0 I1 INVS S VDD VOUT
+*.PININFO I0:I I1:I INVS:I S:I VOUT:O GND:B VDD:B
+MPM1 I1 INVS VOUT VDD p18 W=440n L=180n m=1
+MPM0 I0 S VOUT VDD p18 W=440n L=180n m=1
+MNM1 I1 S VOUT GND n18 W=440n L=180n m=1
+MNM0 I0 INVS VOUT GND n18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    inv
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT inv GND VDD VI VOUT
+*.PININFO VI:I VOUT:O GND:B VDD:B
+MPM0 VOUT VI VDD VDD p18 W=880n L=180n m=1
+MNM0 VOUT VI GND GND n18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    CSA_C
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT CSA_C A B CI COUT GND INVCI S VDD
+*.PININFO A:I B:I CI:I INVCI:I COUT:O S:O GND:B VDD:B
+MPM3 net375 A VDD VDD p18 W=880n L=180n m=1
+MPM2 net381 net384 VDD VDD p18 W=440n L=180n m=1
+MPM1 net384 B VDD VDD p18 W=440n L=180n m=1
+MPM0 net384 A VDD VDD p18 W=440n L=180n m=1
+MPM4 net381 B net375 VDD p18 W=880n L=180n m=1
+MPM8 net382 A VDD VDD p18 W=880n L=180n m=1
+MPM7 net382 B VDD VDD p18 W=880n L=180n m=1
+MPM9 net379 net378 net382 VDD p18 W=880n L=180n m=1
+MPM6 net378 B net377 VDD p18 W=880n L=180n m=1
+MPM5 net377 A VDD VDD p18 W=880n L=180n m=1
+XI0 GND net374 net373 INVCI CI VDD S / MUX
+XI2 GND net371 net372 INVCI CI VDD COUT / MUX
+MNM0 net384 A net376 GND n18 W=440n L=180n m=1
+MNM4 net381 net384 net380 GND n18 W=440n L=180n m=1
+MNM1 net376 B GND GND n18 W=440n L=180n m=1
+MNM6 net380 A GND GND n18 W=440n L=180n m=1
+MNM5 net380 B GND GND n18 W=440n L=180n m=1
+MNM8 net379 B net383 GND n18 W=440n L=180n m=1
+MNM3 net378 A GND GND n18 W=220n L=180n m=1
+MNM2 net378 B GND GND n18 W=220n L=180n m=1
+MNM7 net379 net378 GND GND n18 W=220n L=180n m=1
+MNM9 net383 A GND GND n18 W=440n L=180n m=1
+XI6 GND VDD net381 net374 / inv
+XI5 GND VDD net379 net373 / inv
+XI3 GND VDD net384 net371 / inv
+XI4 GND VDD net378 net372 / inv
+.ENDS
+

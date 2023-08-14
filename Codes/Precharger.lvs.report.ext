@@ -1,0 +1,29 @@
+
+
+       #############################################################
+       ##                                                         ##
+       ##               C A L I B R E    S Y S T E M              ##
+       ##                                                         ##
+       ##    C I R C U I T   E X T R A C T I O N   R E P O R T    ##
+       ##                                                         ##
+       #############################################################
+
+
+REPORT FILE NAME:         Precharger.lvs.report.ext
+LAYOUT NAME:              Precharger.calibre.db ('Precharger')
+CREATION TIME:            Fri Jan 13 14:57:15 2023
+CURRENT DIRECTORY:        /home/work/Desktop/EE113P/Project
+USER NAME:                work
+CALIBRE VERSION:          v2015.2_36.27    Wed Jul 1 10:06:07 PDT 2015
+
+
+
+
+WARNING: Invalid PATHCHK request "GROUND && ! POWER": no GROUND nets present, operation aborted.
+
+
+WARNING: Invalid PATHCHK request "POWER && ! GROUND": no GROUND nets present, operation aborted.
+
+
+WARNING: Invalid PATHCHK request "! POWER && ! GROUND": no GROUND nets present, operation aborted.
+

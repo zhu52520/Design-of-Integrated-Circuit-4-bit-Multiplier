@@ -1,0 +1,240 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: SRAM_DRV
+* View Name:     schematic
+* Netlisted on:  Jan 14 23:38:31 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    Buffer
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Buffer GND VDD X Y
+*.PININFO X:I Y:O GND:B VDD:B
+MPM1 Y net13 VDD VDD p18 W=1.76u L=180n m=1
+MPM0 net13 X VDD VDD p18 W=1.76u L=180n m=1
+MNM1 Y net13 GND GND n18 W=880n L=180n m=1
+MNM0 net13 X GND GND n18 W=880n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    std_inverter
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT std_inverter GND VDD X Y
+*.PININFO X:I Y:O GND:B VDD:B
+MNM0 Y X GND GND n18 W=220n L=180n m=1
+MPM0 Y X VDD VDD p18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    NAND
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NAND A B GND VDD VOUT
+*.PININFO A:I B:I VOUT:O GND:B VDD:B
+MNM0 VOUT A net41 GND n18 W=440n L=180n m=1
+MNM1 net41 B GND GND n18 W=440n L=180n m=1
+MPM1 VOUT B VDD VDD p18 W=440n L=180n m=1
+MPM0 VOUT A VDD VDD p18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    MUX2_SC
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT MUX2_SC GND I0 I1 OUT S VDD
+*.PININFO I0:I I1:I S:I OUT:O GND:B VDD:B
+MPM6 net026 I1 VDD VDD p18 W=440n L=180n m=1
+MPM5 net014 I0 VDD VDD p18 W=440n L=180n m=1
+MPM4 OUT net014 net18 VDD p18 W=880n L=180n m=1
+MPM3 net18 S VDD VDD p18 W=880n L=180n m=1
+MPM2 OUT net026 net19 VDD p18 W=880n L=180n m=1
+MPM1 net19 net11 VDD VDD p18 W=880n L=180n m=1
+MPM0 net11 S VDD VDD p18 W=440n L=180n m=1
+MNM8 net026 I1 GND GND n18 W=220n L=180n m=1
+MNM7 net014 I0 GND GND n18 W=220n L=180n m=1
+MNM4 net11 S GND GND n18 W=220n L=180n m=1
+MNM6 net15 net014 GND GND n18 W=440n L=180n m=1
+MNM5 net15 S GND GND n18 W=440n L=180n m=1
+MNM1 OUT net026 net15 GND n18 W=440n L=180n m=1
+MNM0 OUT net11 net15 GND n18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    AND2_SC
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT AND2_SC A B GND VDD VOUT
+*.PININFO A:I B:I VOUT:O GND:B VDD:B
+MPM2 VOUT net15 VDD VDD p18 W=440n L=180n m=1
+MPM1 net15 B VDD VDD p18 W=440n L=180n m=1
+MPM0 net15 A VDD VDD p18 W=440n L=180n m=1
+MNM2 VOUT net15 GND GND n18 W=220n L=180n m=1
+MNM1 net25 B GND GND n18 W=440n L=180n m=1
+MNM0 net15 A net25 GND n18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    Buffer2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Buffer2 GND VDD X Y
+*.PININFO X:I Y:O GND:B VDD:B
+MNM1 Y net28 GND GND n18 W=220n L=180n m=1
+MNM0 net28 X GND GND n18 W=220n L=180n m=1
+MPM1 Y net28 VDD VDD p18 W=440n L=180n m=1
+MPM0 net28 X VDD VDD p18 W=440n L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    Buffer3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Buffer3 GND VDD X Y
+*.PININFO X:I Y:O GND:B VDD:B
+MNM1 Y net28 GND GND n18 W=1.76u L=180n m=1
+MNM0 net28 X GND GND n18 W=1.76u L=180n m=1
+MPM1 Y net28 VDD VDD p18 W=3.52u L=180n m=1
+MPM0 net28 X VDD VDD p18 W=3.52u L=180n m=1
+.ENDS
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    SRAM_DRV
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT SRAM_DRV ADD0 ADD1 ADD2 ADD3 ADD4 ADD5 ADD6 ADD7 CLK CLKREG GND MODE 
++ PCEN SAEN VDD WL0 WL1 WL2 WL3 WL4 WL5 WL6 WL7
+*.PININFO ADD0:I ADD1:I ADD2:I ADD3:I ADD4:I ADD5:I ADD6:I ADD7:I CLK:I MODE:I 
+*.PININFO CLKREG:O PCEN:O SAEN:O WL0:O WL1:O WL2:O WL3:O WL4:O WL5:O WL6:O 
+*.PININFO WL7:O GND:B VDD:B
+XI131 GND VDD net0150 net0158 / Buffer
+XI130 GND VDD net034 SAEN / Buffer
+XI128 GND VDD net047 PCEN / Buffer
+XI91 GND VDD net0125 net0127 / Buffer
+XI90 GND VDD net0128 net058 / Buffer
+XI85 GND VDD net060 net059 / Buffer
+XI81 GND VDD net061 net062 / Buffer
+XI78 GND VDD net064 net063 / Buffer
+XI77 GND VDD net065 net066 / Buffer
+XI75 GND VDD net074 net073 / Buffer
+XI73 GND VDD net0111 net0110 / Buffer
+XI72 GND VDD net85 net0111 / Buffer
+XI116 GND VDD net109 net086 / Buffer
+XI68 GND VDD net057 net052 / Buffer
+XI65 GND VDD net75 net74 / Buffer
+XI64 GND VDD net76 net75 / Buffer
+XI52 GND VDD net77 net76 / Buffer
+XI51 GND VDD net70 net77 / Buffer
+XI56 GND VDD net78 net70 / Buffer
+XI55 GND VDD net79 net78 / Buffer
+XI54 GND VDD net72 net79 / Buffer
+XI53 GND VDD net80 net72 / Buffer
+XI60 GND VDD net81 net80 / Buffer
+XI57 GND VDD net82 net81 / Buffer
+XI59 GND VDD net83 net82 / Buffer
+XI58 GND VDD net84 net83 / Buffer
+XI62 GND VDD net86 net84 / Buffer
+XI61 GND VDD net0110 net86 / Buffer
+XI50 GND VDD net034 net85 / Buffer
+XI126 GND VDD net069 net0150 / Buffer
+XI125 GND VDD net0151 net069 / Buffer
+XI124 GND VDD net74 net0151 / Buffer
+XI123 GND VDD net96 net0144 / Buffer
+XI122 GND VDD net98 net071 / Buffer
+XI121 GND VDD net100 net0134 / Buffer
+XI120 GND VDD net102 net0140 / Buffer
+XI119 GND VDD net081 net080 / Buffer
+XI118 GND VDD net105 net083 / Buffer
+XI117 GND VDD net106 net087 / Buffer
+XI35 GND VDD net0127 net96 / Buffer
+XI30 GND VDD net058 net98 / Buffer
+XI23 GND VDD net059 net100 / Buffer
+XI18 GND VDD net062 net102 / Buffer
+XI12 GND VDD net063 net081 / Buffer
+XI7 GND VDD net066 net105 / Buffer
+XI2 GND VDD net073 net106 / Buffer
+XI94 GND VDD net052 net109 / Buffer
+XI87 GND VDD net113 net112 / Buffer
+XI88 GND VDD net112 net111 / Buffer
+XI84 GND VDD net116 net113 / Buffer
+XI83 GND VDD net114 net116 / Buffer
+XI82 GND VDD net115 net114 / Buffer
+XI99 GND VDD net117 net115 / Buffer
+XI13 GND VDD net118 net117 / Buffer
+XI26 GND VDD net119 net118 / Buffer
+XI27 GND VDD CLK net119 / Buffer
+XI66 GND VDD net0158 net73 / std_inverter
+XI36 GND VDD net0144 net59 / std_inverter
+XI31 GND VDD net071 net60 / std_inverter
+XI24 GND VDD net0134 net61 / std_inverter
+XI19 GND VDD net0140 net62 / std_inverter
+XI14 GND VDD net080 net63 / std_inverter
+XI8 GND VDD net083 net64 / std_inverter
+XI3 GND VDD net087 net65 / std_inverter
+XI95 GND VDD net086 net66 / std_inverter
+XI44 GND VDD net111 net69 / std_inverter
+XI114 net69 CLK GND VDD net110 / NAND
+XI96 GND net112 GND net034 MODE VDD / MUX2_SC
+XI38 GND net0137 ADD7 WL7 MODE VDD / MUX2_SC
+XI33 GND net068 ADD6 WL6 MODE VDD / MUX2_SC
+XI28 GND net070 ADD5 WL5 MODE VDD / MUX2_SC
+XI21 GND net072 ADD4 WL4 MODE VDD / MUX2_SC
+XI16 GND net0136 ADD3 WL3 MODE VDD / MUX2_SC
+XI10 GND net075 ADD2 WL2 MODE VDD / MUX2_SC
+XI5 GND net077 ADD1 WL1 MODE VDD / MUX2_SC
+XI115 GND net079 ADD0 WL0 MODE VDD / MUX2_SC
+XI0 GND net110 VDD net047 MODE VDD / MUX2_SC
+XI67 net73 net77 GND VDD net0155 / AND2_SC
+XI37 net0125 net59 GND VDD net107 / AND2_SC
+XI105 net107 ADD7 GND VDD net0137 / AND2_SC
+XI32 net0128 net60 GND VDD net97 / AND2_SC
+XI104 net97 ADD6 GND VDD net068 / AND2_SC
+XI25 net060 net61 GND VDD net101 / AND2_SC
+XI103 net101 ADD5 GND VDD net070 / AND2_SC
+XI20 net061 net62 GND VDD net67 / AND2_SC
+XI102 net67 ADD4 GND VDD net072 / AND2_SC
+XI15 net064 net63 GND VDD net99 / AND2_SC
+XI101 net99 ADD3 GND VDD net0136 / AND2_SC
+XI9 net065 net64 GND VDD net103 / AND2_SC
+XI100 net103 ADD2 GND VDD net075 / AND2_SC
+XI4 net074 net65 GND VDD net104 / AND2_SC
+XI98 net104 ADD1 GND VDD net077 / AND2_SC
+XI93 net057 net66 GND VDD net108 / AND2_SC
+XI97 net108 ADD0 GND VDD net079 / AND2_SC
+XI107 GND VDD net047 net074 / Buffer2
+XI108 GND VDD net047 net065 / Buffer2
+XI109 GND VDD net047 net064 / Buffer2
+XI110 GND VDD net047 net061 / Buffer2
+XI111 GND VDD net047 net060 / Buffer2
+XI112 GND VDD net047 net0128 / Buffer2
+XI113 GND VDD net047 net0125 / Buffer2
+XI106 GND VDD net047 net057 / Buffer2
+XI129 GND VDD net0155 CLKREG / Buffer3
+.ENDS
+

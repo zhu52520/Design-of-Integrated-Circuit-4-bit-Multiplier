@@ -1,0 +1,29 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: Precharger
+* View Name:     schematic
+* Netlisted on:  Jan 13 14:57:14 2023
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    Precharger
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Precharger BIT INVBIT PCEN VDD
+*.PININFO PCEN:I BIT:B INVBIT:B VDD:B
+MPM0 VDD PCEN BIT VDD p18 W=440n L=180n m=1
+MPM1 INVBIT PCEN VDD VDD p18 W=440n L=180n m=1
+MPM2 BIT PCEN INVBIT VDD p18 W=440n L=180n m=1
+.ENDS
+

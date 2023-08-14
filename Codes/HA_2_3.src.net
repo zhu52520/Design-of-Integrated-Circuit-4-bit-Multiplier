@@ -1,0 +1,40 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PROJLib
+* Top Cell Name: HA_2_3
+* View Name:     schematic
+* Netlisted on:  Dec 30 02:58:29 2022
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PROJLib
+* Cell Name:    HA_2_3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT HA_2_3 A B C GND INVC S VDD
+*.PININFO A:I B:I C:O INVC:O S:O GND:B VDD:B
+MNM6 S net113 GND GND n18 W=220n L=180n m=1
+MNM0 INVC B net123 GND n18 W=440n L=180n m=1
+MNM2 net113 INVC net111 GND n18 W=440n L=180n m=1
+MNM4 net111 B GND GND n18 W=440n L=180n m=1
+MNM3 net111 A GND GND n18 W=440n L=180n m=1
+MNM1 net123 A GND GND n18 W=440n L=180n m=1
+MNM5 C INVC GND GND n18 W=220n L=180n m=1
+MPM6 S net113 VDD VDD p18 W=440n L=180n m=1
+MPM3 net122 B VDD VDD p18 W=880n L=180n m=1
+MPM1 INVC B VDD VDD p18 W=440n L=180n m=1
+MPM0 INVC A VDD VDD p18 W=440n L=180n m=1
+MPM2 net113 INVC VDD VDD p18 W=440n L=180n m=1
+MPM4 net113 A net122 VDD p18 W=880n L=180n m=1
+MPM5 C INVC VDD VDD p18 W=440n L=180n m=1
+.ENDS
+

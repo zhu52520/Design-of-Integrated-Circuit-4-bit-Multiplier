@@ -1,0 +1,6 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/Register_9bit.dv
+dv_start matched                                  
+dv_cell {Register_9bit} {Register_9bit} matched
+dv_obj_count -transformed_nets {58 58} -transformed_inst {72 72} -transformed_port {31 31}
+dv_end

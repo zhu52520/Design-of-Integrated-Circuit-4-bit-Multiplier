@@ -1,0 +1,21 @@
+//  Calibre View Setup Information
+//  ------------------------------
+//	  Output Library: PROJLib
+//	  Schematic Library: PROJLib
+//	  Cellmap File: ./calview.cellmap
+//	  Log File: ./calview.log
+//	  Calibre View Name: calibre
+//	  Calibre View Type: schematic
+//	  Create Terminals: create all terminals
+//	  Preserve Device Case: off
+//	  Execute Callbacks: off
+//	  Suppress Notes: off
+//	  Reset Properties: ("m=1")
+//	  Magnify Devices by: 1.000000
+//	  Magnify Parasitics by: 1.000000
+//	  Device Placement: Arrayed
+//	  Parasitic Placement: Arrayed
+//	  Show Parasitic Polygons: off
+//	  Open Calibre CellView: Edit-mode
+//	  Generate SPECTRE Netlist: off
+//	  Always Show Dialog: on
